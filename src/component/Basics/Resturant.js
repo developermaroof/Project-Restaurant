@@ -1,27 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import Menu from "./menuApi";
+import MenuCard from "./MenuCard";
 
 const Resturant = () => {
+  const [menuData, setMenuData] = useState(Menu);
+
   return (
     <>
-      <div className="card-container">
-        <div className="card">
-          <div className="card-body">
-            <span className="card-number card-circle subtle">1</span>
-            <span className="card-author subtle">Breakfast</span>
-            <h2 className="card-title">Maggie</h2>
-            <span className="card-description subtle">
-              I love Maggie really oo Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Aperiam iste suscipit cum expedita consectetur
-              vero adipisci ipsam dolorum placeat nesciunt sunt ratione
-              doloremque deleniti nulla vitae impedit, cumque maxime sequi.
-            </span>
-            <div className="card-read">Read</div>
-          </div>
-          <img src={image} alt="images" className="card-media" />
-          <span className="card-tag subtle">Order Now</span>
-        </div>
-      </div>
+      <MenuCard menuData={menuData} />
     </>
   );
 };
